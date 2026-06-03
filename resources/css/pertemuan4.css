@@ -1,0 +1,91 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    background-color: hsl(0, 0%, 100%);
+    transform: scale(1);
+    transform-origin: top left;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.links li a {
+    text-decoration: none;
+    color: #7d89c5;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+}
+
+.title {
+    text-align: center;
+    color: #324084;
+    font-weight: 700;
+    margin: 0;
+    font-size: x-large;
+}
+
+.buynow-btn {
+    background-color: #121c46;
+    color: white;
+    padding: 2px 50px;
+    border: none;
+    border-radius: 2px;
+}
+
+.bg-img {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    max-width: 110%;
+}
+
+.purchase-btn {
+    background-color: #182562;
+    color: white;
+    padding: 4px 20px;
+    border: none;
+    border-radius: 2px;
+}
+
+.teks h1 {
+    color: rgb(0, 0, 0);
+    font-size: 1,9cm;
+}
+
+.teks p {
+    color: #5864ab;
+    margin-bottom: 40px;
+    margin-top: 20px;
+}
+
+.learn-btn {
+    background-color: transparent;
+    color: black;
+    padding: 2px 40px;
+    border: 2px solid black;
+    border-radius: 2px;
+    font-weight: 500;
+}
+
+button {
+    margin-right: 15px;
+}
