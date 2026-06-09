@@ -1,6 +1,7 @@
 @extends('templateweek13')
 @section('judul_halaman', 'Data Pegawai')
 @section('konten')
+
 <p>
 	<br><a href="/pegawai/tambah" class="btn btn-primary"> Tambah Pegawai Baru</a>
 </p>
