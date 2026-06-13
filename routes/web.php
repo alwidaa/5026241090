@@ -5,6 +5,8 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\DosenController;
 use App\Http\Controllers\BelajarlagiController;
+use App\Http\Controllers\keranjangDBController;
+use App\Http\Controllers\SiswaController;
 
 // Route dasar
 Route::get('/', function () {
@@ -81,10 +83,27 @@ Route::get('/pegawai/hapus/{id}', [PegawaiDBController::class, 'hapus']);
 Route::get('/pegawai/cari', [PegawaiDBController::class, 'cari']);
 
 // CRUD Lipstick Database
-Route::get('/lipstickdb', [BelajarlagiController::class, 'index']);
+Route::get('/lipstick', [BelajarlagiController::class, 'index']);
 Route::get('/lipstickdb/tambah', [BelajarlagiController::class, 'tambahlipstick']);
 Route::post('/lipstickdb/store', [BelajarlagiController::class, 'store']);
 Route::get('/lipstickdb/edit/{id}', [BelajarlagiController::class, 'editlipstick']);
 Route::post('/lipstickdb/update', [BelajarlagiController::class, 'update']);
 Route::get('/lipstickdb/hapus/{id}', [BelajarlagiController::class, 'hapus']);
 Route::get('/lipstickdb/cari', [BelajarlagiController::class, 'cari']);
+
+// CRUD keranjang Database
+Route::get('/keranjang', [keranjangDBController::class, 'index']);
+Route::get('/keranjang/tambah', [keranjangDBController::class, 'tambahkeranjang']);
+Route::post('/keranjang/store', [keranjangDBController::class, 'store']);
+Route::get('/keranjang/edit/{id}', [keranjangDBController::class, 'edit']);
+Route::post('/keranjang/update', [keranjangDBController::class, 'update']);
+Route::get('/keranjang/hapus/{id}', [keranjangDBController::class, 'hapus']);
+Route::get('/keranjang/cari', [keranjangDBController::class, 'cari']);
+
+//route CRUD siswa
+Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
+Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
+Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');

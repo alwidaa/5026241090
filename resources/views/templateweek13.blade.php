@@ -23,13 +23,13 @@
                         <a class="nav-link" href="/pegawai">Pegawai</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/lipstickdb">Lipstick</a>
+                        <a class="nav-link" href="/lipstick">Lipstick</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Siswa</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Latihan 1</a>
+                        <a class="nav-link" href="/keranjang">Latihan Laki</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Latihan 2</a>
