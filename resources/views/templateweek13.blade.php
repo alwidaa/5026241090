@@ -26,13 +26,13 @@
                         <a class="nav-link" href="/lipstick">Lipstick</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Siswa</a>
+                        <a class="nav-link" href="/siswa">Siswa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/keranjang">Latihan Laki</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Latihan 2</a>
+                        <a class="nav-link" href="/nilaikuliah">Latihan perempuan</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">EAS</a>

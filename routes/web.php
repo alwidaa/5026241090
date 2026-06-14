@@ -7,6 +7,7 @@ use App\Http\Controllers\DosenController;
 use App\Http\Controllers\BelajarlagiController;
 use App\Http\Controllers\keranjangDBController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\nilaiDBController;
 
 // Route dasar
 Route::get('/', function () {
@@ -101,9 +102,14 @@ Route::get('/keranjang/hapus/{id}', [keranjangDBController::class, 'hapus']);
 Route::get('/keranjang/cari', [keranjangDBController::class, 'cari']);
 
 //route CRUD siswa
-Route::get('/siswa', [SiswaController::class, 'index'])->name('siswa.index');
-Route::get('/siswa/create', [SiswaController::class, 'create'])->name('siswa.create');
-Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
-Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
-Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
-Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+Route::get('/siswa', [SiswaController::class, 'indexsiswa'])->name('indexsiswa');
+Route::get('/siswa/create', [SiswaController::class, 'create'])->name('createsiswa');
+Route::post('/siswa/store', [SiswaController::class, 'store'])->name('store');
+Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('editsiswa');
+Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('update');
+Route::delete('/siswa/delete/{nrp}', [SiswaController::class, 'destroy'])->name('destroy');
+
+//route untuk nilaikuliah
+route::get('/nilaikuliah', [App\Http\Controllers\nilaiDBController::class, 'index']);
+route::get('/nilaikuliah/tambah', [App\Http\Controllers\nilaiDBController::class, 'tambah']);
+route::post('/nilaikuliah/store', [App\Http\Controllers\nilaiDBController::class, 'store']);

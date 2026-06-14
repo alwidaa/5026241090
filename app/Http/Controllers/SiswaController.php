@@ -8,15 +8,16 @@ use Illuminate\Validation\Rule;
 
 class SiswaController extends Controller
 {
-    public function index()
-    {
-        $siswa = DB::table('siswa')->orderBy('NRP')->get();
-        return view('siswa.index', compact('siswa'));
-    }
+   public function indexsiswa()
+{
+    $siswa = DB::table('siswa')->orderBy('NRP')->get();
+
+    return view('indexsiswa', compact('siswa'));
+}
 
     public function create()
     {
-        return view('siswa.create');
+        return view('createsiswa');
     }
 
     public function store(Request $request)
@@ -35,7 +36,7 @@ class SiswaController extends Controller
             'TanggalLahir' => $request->TanggalLahir,
         ]);
 
-        return redirect()->route('siswa.index')->with('success', 'Data siswa berhasil ditambahkan.');
+        return redirect()->route('indexsiswa')->with('success', 'Data siswa berhasil ditambahkan.');
     }
 
     public function edit($nrp)
@@ -46,7 +47,7 @@ class SiswaController extends Controller
             abort(404);
         }
 
-        return view('siswa.edit', compact('siswa'));
+        return view('editsiswa', compact('siswa'));
     }
 
     public function update(Request $request, $nrp)
@@ -72,13 +73,13 @@ class SiswaController extends Controller
                 'TanggalLahir' => $request->TanggalLahir,
             ]);
 
-        return redirect()->route('siswa.index')->with('success', 'Data siswa berhasil diubah.');
+        return redirect()->route('indexsiswa')->with('success', 'Data siswa berhasil diubah.');
     }
 
     public function destroy($nrp)
     {
         DB::table('siswa')->where('NRP', $nrp)->delete();
 
-        return redirect()->route('siswa.index')->with('success', 'Data siswa berhasil dihapus.');
+        return redirect()->route('indexsiswa')->with('success', 'Data siswa berhasil dihapus.');
     }
 }
