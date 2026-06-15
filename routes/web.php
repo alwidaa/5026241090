@@ -8,6 +8,7 @@ use App\Http\Controllers\BelajarlagiController;
 use App\Http\Controllers\keranjangDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\nilaiDBController;
+use App\Http\Controllers\mypegawaiController;
 
 // Route dasar
 Route::get('/', function () {
@@ -113,3 +114,8 @@ Route::delete('/siswa/delete/{nrp}', [SiswaController::class, 'destroy'])->name(
 route::get('/nilaikuliah', [App\Http\Controllers\nilaiDBController::class, 'index']);
 route::get('/nilaikuliah/tambah', [App\Http\Controllers\nilaiDBController::class, 'tambah']);
 route::post('/nilaikuliah/store', [App\Http\Controllers\nilaiDBController::class, 'store']);
+
+//route untuk mypegawai
+route::get('/eas', [App\Http\Controllers\mypegawaiController::class, 'index']);
+route::get('/eas/tambah', [App\Http\Controllers\mypegawaiController::class, 'tambah']);
+route::post('/eas/store', [App\Http\Controllers\mypegawaiController::class, 'store']);
