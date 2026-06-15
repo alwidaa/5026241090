@@ -119,3 +119,4 @@ route::post('/nilaikuliah/store', [App\Http\Controllers\nilaiDBController::class
 route::get('/eas', [App\Http\Controllers\mypegawaiController::class, 'index']);
 route::get('/eas/tambah', [App\Http\Controllers\mypegawaiController::class, 'tambah']);
 route::post('/eas/store', [App\Http\Controllers\mypegawaiController::class, 'store']);
+Route::get('/eas/view/{kodepegawai}', [App\Http\Controllers\mypegawaiController::class, 'view']);

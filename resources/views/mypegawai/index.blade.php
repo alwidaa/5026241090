@@ -12,16 +12,22 @@
         <th>nama lengkap</th>
         <th>divisi</th>
         <th>departemen</th>
+        <th>Aksi</th>
     </tr>
 
     @foreach($mypegawai as $k)
-    <tr>
-        <td>{{ $k->kodepegawai }}</td>
-        <td>{{ $k->namalengkap }}</td>
-        <td>{{ $k->divisi }}</td>
-        <td>{{ $k->departemen }}</td>
-
-    </tr>
-    @endforeach
+<tr>
+    <td>{{ $k->kodepegawai }}</td>
+    <td>{{ $k->namalengkap }}</td>
+    <td>{{ $k->divisi }}</td>
+    <td>{{ $k->departemen }}</td>
+    <td>
+        <a href="/eas/view/{{ $k->kodepegawai }}"
+           class="btn btn-success btn-sm">
+           View
+        </a>
+    </td>
+</tr>
+@endforeach
 </table>
     @endsection

@@ -11,7 +11,7 @@
         </div>
 
         <div class="card-body">
-            <form action="/mypegawai/store" method="post">
+            <form action="/eas/store" method="post">
                 {{ csrf_field() }}
 
                 <div class="row mb-3">
@@ -36,9 +36,9 @@
                 </div>
 
                   <div class="row mb-3">
-                    <label for="departemeno" class="col-sm-2 col-form-label">departemen</label>
+                    <label for="departemen" class="col-sm-2 col-form-label">departemen</label>
                     <div class="col-sm-10">
-                        <input type="text" name="divisi" id="divisi" class="form-control" required>
+                        <input type="text" name="departemen" id="departemen" class="form-control" required>
                     </div>
                 </div>
 
@@ -51,4 +51,27 @@
             </form>
         </div>
     </div>
+
+    <script>
+function validasiForm() {
+
+    let kodepegawai = document.getElementById("kodepegawai").value;
+    let namalengkap = document.getElementById("namalengkap").value;
+
+    let regexKode = /^[a-zA-Z0-9]+$/;
+    let regexNama = /^[a-zA-Z\s]+$/;
+
+    if(!regexKode.test(kodepegawai)){
+        alert("Kode Pegawai hanya boleh huruf dan angka");
+        return false;
+    }
+
+    if(!regexNama.test(namalengkap)){
+        alert("Nama Lengkap hanya boleh huruf");
+        return false;
+    }
+
+    return true;
+}
+</script>
 @endsection

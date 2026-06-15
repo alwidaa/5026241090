@@ -15,6 +15,14 @@ class mypegawaiController extends Controller
     return view('mypegawai.index', compact('mypegawai'));
 }
 
+public function view($kodepegawai)
+{
+    $pegawai = DB::table('mypegawai')
+                ->where('kodepegawai', $kodepegawai)
+                ->first();
+
+    return view('mypegawai.view', compact('pegawai'));
+}
     public function Tambah()
     {
         $mypegawai = DB::table('mypegawai')->orderBy('kodepegawai')->get();
@@ -22,23 +30,15 @@ class mypegawaiController extends Controller
         return view('mypegawai.tambah');
     }
 
-    public function store(Request $request)
-    {
-        $request->validate([
-            'kodepegawai' => 'required|string|max:9|unique:mypegawai,kodepegawai',
-            'namalengkap' => 'required|string|max:50',
-            'divisi' => 'required|string|max:5',
-            'departemen' => 'required|string|max:10',
-        ]);
+   public function store(Request $request){
+    DB::table('mypegawai')->insert([
+        'kodepegawai' => $request->kodepegawai,
+        'namalengkap' => $request->namalengkap,
+        'divisi' => $request->divisi,
+        'departemen' => $request->departemen
+    ]);
 
-        DB::table('mypegawai')->insert([
-            'kodepegawai' => $request->kodepegawai,
-            'namalengkap' => $request->namalengkap,
-            'divisi' => $request->divisi,
-            'departemen' => $request->departemen,
-        ]);
-
-        return redirect()->route('mypegawai.index')->with('success', 'Data siswa berhasil ditambahkan.');
-    }
+    return redirect('/eas');
+}
 
 }
